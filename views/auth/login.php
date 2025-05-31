@@ -13,37 +13,48 @@ session_start();
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../..//public/css/styles.css">
 </head>
-<body class="bg-light">
+<body class="green-bg d-flex flex-column min-vh-100">
 
-<?php include_once __DIR__ . '/../partials/navbar.php'; ?>
+        <?php include_once __DIR__ . '/../partials/navbar.php'; ?>
 
-<div class="container d-flex justify-content-center align-items-center" style="min-height: 85vh;">
-    <div class="card shadow-sm border-0 rounded-4" style="max-width: 500px; width: 100%;">
-        <div class="card-header text-white text-center" style="background-color:rgb(100, 184, 118);">
-            <h3 class="mb-0">Přihlášení</h3>
-        </div>
-        <div class="card-body bg-white">
-            <form action="../../controllers/login.php" method="POST" novalidate>
-                <div class="mb-3">
-                    <label for="username" class="form-label">Uživatelské jméno <span class="text-danger">*</span></label>
-                    <input type="text" name="username" id="username" class="form-control rounded-3" required>
+            <main class="flex-grow-1">
+                <div class="container d-flex justify-content-center align-items-center" style="min-height: 80vh;">
+                    <div class="card shadow-sm border-0 rounded-4" style="max-width: 500px; width: 100%;">
+                        <div class="card-header text-white text-center" style="background-color:rgb(100, 184, 118);">
+                            <h3 class="mb-0">Přihlášení</h3>
+                        </div>
+                        <div class="card-body bg-white">
+                            <form action="../../controllers/login.php" method="POST" novalidate>
+                                <div class="mb-3">
+                                    <label for="username" class="form-label">Uživatelské jméno <span class="text-danger">*</span></label>
+                                    <input type="text" name="username" id="username" class="form-control rounded-3" required>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="password" class="form-label">Heslo <span class="text-danger">*</span></label>
+                                    <input type="password" name="password" id="password" class="form-control rounded-3" required>
+                                </div>
+
+                                <button type="submit" class="btn btn-success w-100 rounded-pill">Přihlásit se</button>
+                            </form>
+                        </div>
+                        <div class="card-footer bg-white text-center border-top-0">
+                            <small>Nemáte účet? <a href="register.php">Zaregistrujte se</a></small>
+                        </div>
+                    </div>
                 </div>
+            </main>    
 
-                <div class="mb-3">
-                    <label for="password" class="form-label">Heslo <span class="text-danger">*</span></label>
-                    <input type="password" name="password" id="password" class="form-control rounded-3" required>
-                </div>
+        <footer class="text-center py-4 mt-5 border-top bg-white">
+            <div class="container">
+                <small class="text-muted">
+                    &copy; <?= date('Y') ?> Solarpunk Blog. Všechna práva vyhrazena.
+                </small>
+            </div>
+        </footer>
 
-                <button type="submit" class="btn btn-success w-100 rounded-pill">Přihlásit se</button>
-            </form>
-        </div>
-        <div class="card-footer bg-white text-center border-top-0">
-            <small>Nemáte účet? <a href="register.php">Zaregistrujte se</a></small>
-        </div>
-    </div>
-</div>
 
-<!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

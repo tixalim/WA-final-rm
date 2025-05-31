@@ -32,8 +32,12 @@ if (!$isAdmin && $post['user_id'] != $userId) {
     die("Nemáte oprávnění smazat tento příspěvek.");
 }
 
-// Mazání
-$success = $postModel->delete($postId);
+if ($isAdmin) {
+    $success = $postModel->delete($postId, null); // Admin nepotřebuje user_id
+} else {
+    $success = $postModel->delete($postId, $userId); // Uživatelská kontrola
+}
+
 
 if ($success) {
     header("Location: " . BASE_URL . "views/posts/list.php");

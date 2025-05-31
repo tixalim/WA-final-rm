@@ -1,2 +1,2 @@
 <?php
-define('BASE_URL', '/wa-final-rm/public/');
+define('BASE_URL', 'http://localhost/wa-final-rm/');

@@ -9,7 +9,7 @@ if (session_status() === PHP_SESSION_NONE) {
 
 <nav class="navbar navbar-expand-lg navbar-light eco-navbar">
     <div class="container">
-        <a class="navbar-brand fw-semibold text-success" href="<?= BASE_URL ?>index.php">Solarpunk</a>
+        <a class="navbar-brand fw-semibold text-success" href="<?= BASE_URL ?>public/index.php">Solarpunk</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarNav" aria-controls="navbarNav"
                 aria-expanded="false" aria-label="Toggle navigation">
@@ -21,7 +21,7 @@ if (session_status() === PHP_SESSION_NONE) {
             <!-- Levá část -->
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link" href="<?= BASE_URL ?>about.php">O tématu</a>
+                    <a class="nav-link" href="<?= BASE_URL ?>public/about.php">O tématu</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="<?= BASE_URL ?>views/posts/list.php">Příspěvky</a>
@@ -31,6 +31,12 @@ if (session_status() === PHP_SESSION_NONE) {
                         <a class="nav-link" href="<?= BASE_URL ?>views/posts/create.php">Přidat příspěvek</a>
                     </li>
                 <?php endif; ?>
+                <?php if (isset($_SESSION['user_id'])): ?>
+                <li class="nav-item">
+                    <a class="nav-link" href="<?= BASE_URL ?>views/posts/my_posts.php">Moje příspěvky</a>
+                </li>
+            <?php endif; ?>
+
             </ul>
 
             <!-- Pravá část -->
@@ -44,10 +50,10 @@ if (session_status() === PHP_SESSION_NONE) {
                     </li>
                 <?php else: ?>
                     <li class="nav-item">
-                        <a href="<?= BASE_URL ?>../views/auth/login.php" class="nav-link">Přihlášení</a>
+                        <a href="<?= BASE_URL ?>views/auth/login.php" class="nav-link">Přihlášení</a>
                     </li>
                     <li class="nav-item">
-                        <a href="<?= BASE_URL ?>../views/auth/register.php" class="nav-link">Registrace</a>
+                        <a href="<?= BASE_URL ?>views/auth/register.php" class="nav-link">Registrace</a>
                     </li>
                 <?php endif; ?>
             </ul>

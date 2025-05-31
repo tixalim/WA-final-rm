@@ -36,7 +36,23 @@ if (!$isAdmin && $post['user_id'] != $userId) {
     die("Nemáte oprávnění upravit tento příspěvek.");
 }
 
-$success = $postModel->update($id, $title, $content);
+// Pokud je nahrán nový obrázek
+$imagePath = $post['image_path']; // výchozí - zachová aktuální obrázek
+if (isset($_FILES['image']) && $_FILES['image']['error'] === UPLOAD_ERR_OK) {
+    $uploadDir = __DIR__ . '/../public/uploads/';
+    if (!is_dir($uploadDir)) {
+        mkdir($uploadDir, 0755, true);
+    }
+
+    $filename = uniqid() . '_' . basename($_FILES['image']['name']);
+    $targetPath = $uploadDir . $filename;
+
+    if (move_uploaded_file($_FILES['image']['tmp_name'], $targetPath)) {
+        $imagePath = 'uploads/' . $filename;
+    }
+}
+
+$success = $postModel->updateWithImage($id, $title, $content, $imagePath);
 
 if ($success) {
     header("Location: " . BASE_URL . "views/posts/detail.php?id=$id");

@@ -19,6 +19,15 @@ body.green-bg {
     background-color: #71b781;
 }
 
+/* Vlastní sjednocený základ pro všechna malá tlačítka */
+.btn-sm {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    border-radius: 0.2rem;
+}
+
+
 /* Rounded corners for boxes */
 .rounded-4 {
     border-radius: 1.5rem !important;
@@ -27,6 +36,29 @@ body.green-bg {
 /* Smaller cards (posts/community) */
 .bg-light {
     background-color: #f1f9f3 !important;
+}
+
+/* Vlastní barvy tlačítek */
+.btn-edit {
+    background-color: #f5c06f !important;
+    color: #2e2e2e !important;
+    border: 1px solid #e2aa54;
+}
+
+.btn-edit:hover {
+    background-color: #e2aa54 !important;
+    color: #000 !important;
+}
+
+.btn-delete {
+    background-color: #a0522d !important;
+    color: #fff !important;
+    border: 1px solid #8b4513;
+}
+
+.btn-delete:hover {
+    background-color: #8b4513 !important;
+    color: #fff !important;
 }
 
 
@@ -52,4 +84,3 @@ body.green-bg {
 .eco-navbar .navbar-brand {
     font-size: 1.5rem;
 }
-
