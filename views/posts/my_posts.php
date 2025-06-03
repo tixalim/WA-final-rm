@@ -4,11 +4,6 @@ require_once __DIR__ . '/../../config/config.php';
 require_once __DIR__ . '/../../models/Database.php';
 require_once __DIR__ . '/../../models/Post.php';
 
-if (!isset($_SESSION['user_id'])) {
-    header("Location: " . BASE_URL . "auth/login.php");
-    exit();
-}
-
 $db = (new Database())->getConnection();
 $postModel = new Post($db);
 $myPosts = $postModel->getByUserId($_SESSION['user_id']);
