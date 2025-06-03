@@ -30,14 +30,14 @@ class User {
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
-    // Vrátí uživatele podle ID (volitelné, může se hodit např. pro profil)
+    // Vrátí uživatele podle ID
     public function findById($id) {
         $stmt = $this->db->prepare("SELECT * FROM users WHERE id = ?");
         $stmt->execute([$id]);
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
-    // (Volitelné) Mazání uživatele (pouze pro admina)
+    // Mazání uživatele (pouze pro admina)
     public function delete($id) {
         $stmt = $this->db->prepare("DELETE FROM users WHERE id = ?");
         return $stmt->execute([$id]);
