@@ -3,12 +3,6 @@ body.green-bg {
     font-family: 'Segoe UI', sans-serif;
 }
 
-/* Hero box */
-.hero-box {
-    background: #fef9f5;
-    max-width: 960px;
-}
-
 /* Buttons */
 .btn-success {
     background-color: #88c796;

@@ -9,10 +9,10 @@ if (session_status() === PHP_SESSION_NONE) {
 
 <nav class="navbar navbar-expand-lg navbar-light eco-navbar">
     <div class="container">
-    <a class="navbar-brand d-flex align-items-center fw-semibold text-success" href="<?= BASE_URL ?>public/index.php">
-    <img src="<?= BASE_URL ?>public/images/logo.png" alt="Logo" width="60" height="60" class="me-2">
-    Solarpunk
-</a>
+        <a class="navbar-brand d-flex align-items-center fw-semibold text-success" href="<?= BASE_URL ?>public/index.php">
+            <img src="<?= BASE_URL ?>public/images/logo.png" alt="Logo" width="60" height="60" class="me-2">
+            Solarpunk
+        </a>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarNav" aria-controls="navbarNav"
